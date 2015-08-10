@@ -17,6 +17,7 @@ import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.nispok.snackbar.SnackbarManager;
+import com.rey.material.widget.CheckBox;
 import com.rey.material.widget.EditText;
 
 import de.greenrobot.event.EventBus;
@@ -29,6 +30,7 @@ public class LoginActivity extends Activity {
     private EditText mAccount;
     private EditText mPassword;
     private ActionProcessButton mLogin;
+    private CheckBox mAutoLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,45 +41,31 @@ public class LoginActivity extends Activity {
         startActivity(intent);
 
         initUI();
+        if (SPUtils.getAutoLogin(this)) {
+            login();
+        }
     }
 
     private void initUI() {
-        mAccount = (EditText) findViewById(R.id.account);
-        mAccount.requestFocus();
-        mAccount.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-            }
-            @Override
-            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
-                                          int arg3) {
-            }
-            @Override
-            public void afterTextChanged(Editable arg0) {
-                mLogin.setEnabled(checkLoginButtonEnabled());
-            }
-        });
-        mPassword = (EditText) findViewById(R.id.password);
-        mPassword.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-            }
-            @Override
-            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
-                                          int arg3) {
-            }
-            @Override
-            public void afterTextChanged(Editable arg0) {
-                mLogin.setEnabled(checkLoginButtonEnabled());
-            }
-        });
         mLogin = (ActionProcessButton) findViewById(R.id.login);
-//        mLogin.setEnabled(false);
         mLogin.setMode(ActionProcessButton.Mode.ENDLESS);
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 login();
+            }
+        });
+        mAutoLogin = (CheckBox) findViewById(R.id.auto_login);
+        mAutoLogin.setChecked(SPUtils.getAutoLogin(this));
+        mAccount = (EditText) findViewById(R.id.account);
+        mAccount.requestFocus();
+        mAccount.setText(SPUtils.getAccount(this));
+        mPassword = (EditText) findViewById(R.id.password);
+        mPassword.setText(SPUtils.getPassowrd(this));
+        findViewById(R.id.auto_login_text).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAutoLogin.setChecked(!mAutoLogin.isChecked());
             }
         });
     }
@@ -124,6 +112,9 @@ public class LoginActivity extends Activity {
                     @Override
                     public void onSuccess(ResponseInfo<String> arg0) {
                         Log.d(Constants.TAG, arg0.result);
+                        SPUtils.setAutoLogin(LoginActivity.this, mAutoLogin.isChecked());
+                        SPUtils.setAccount(LoginActivity.this, mAccount.getText().toString());
+                        SPUtils.setPassword(LoginActivity.this, mPassword.getText().toString());
                         LoginActivity.this.finish();
                     }
                 });

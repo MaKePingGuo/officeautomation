@@ -76,4 +76,14 @@
         <item name="cet_spanBackgroundColor">#ff424242</item>
         <item name="cet_spanSpacing">4dp</item>
     </style>
+
+    <style name="LightCheckBoxDrawable" parent="Material.Drawable.CheckBox">
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Body1</item>
+        <item name="android:textColor">#FF000000</item>
+    </style>
+    <style name="DarkCheckBoxDrawable" parent="Material.Drawable.CheckBox">
+        <item name="cbd_strokeColor">@drawable/color_switch_dark</item>
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Body1</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+    </style>
 </resources>

@@ -27,11 +27,11 @@
         android:inputType="textEmailSubject|textMultiLine"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
+        android:singleLine="true"
         app:cet_spanFontFamily="asset:FreeSans.ttf"
         app:et_inputId="@+id/textfield_et_contact_input"
         app:et_labelTextColor="@android:color/black"
         app:et_supportMode="none"
-        android:singleLine="true"
         app:et_supportTextColor="@android:color/black"
         app:v_styleId="@array/edittext_contact" />
 
@@ -44,10 +44,10 @@
         android:dropDownSelector="@drawable/abc_list_selector_background_transition_holo_light"
         android:hint="Contact"
         android:imeOptions="actionNext|flagNoEnterAction|flagNoExtractUi"
-        android:paddingLeft="10dp"
-        android:singleLine="true"
         android:inputType="textPassword"
+        android:paddingLeft="10dp"
         android:paddingRight="10dp"
+        android:singleLine="true"
         app:cet_spanFontFamily="asset:FreeSans.ttf"
         app:et_inputId="@+id/textfield_et_contact_input"
         app:et_labelTextColor="@android:color/black"
@@ -55,14 +55,38 @@
         app:et_supportTextColor="@android:color/black"
         app:v_styleId="@array/edittext_contact" />
 
+    <com.rey.material.widget.CheckBox
+        android:id="@+id/auto_login"
+        android:layout_width="30dip"
+        android:layout_height="30dip"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/password"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="10dp"
+        android:checked="true"
+        android:gravity="center_vertical"
+        app:v_styleId="@array/checkbox"></com.rey.material.widget.CheckBox>
+
+    <TextView
+        android:id="@+id/auto_login_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/auto_login"
+        android:layout_alignTop="@id/auto_login"
+        android:layout_toRightOf="@id/auto_login"
+        android:gravity="center_vertical|left"
+        android:text="下次自动登陆"
+        android:textColor="@android:color/white" />
+
     <com.dd.processbutton.iml.ActionProcessButton
         android:id="@+id/login"
         android:layout_width="fill_parent"
         android:layout_height="50dip"
-        android:layout_below="@id/password"
+        android:layout_below="@id/auto_login"
         android:layout_marginLeft="20dip"
         android:layout_marginRight="20dip"
-        android:layout_marginTop="15dip"
         android:text="登陆"
         android:textColor="@android:color/white"
         android:textSize="@dimen/text_size_medium" />

@@ -1,0 +1,70 @@
+<!-- A DrawerLayout is intended to be used as the top-level content view using match_parent for both width and height to consume the full space available. -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/top_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitStart"
+        android:src="@drawable/login_banner" />
+
+    <com.rey.material.widget.EditText
+        android:id="@+id/account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_view"
+        android:completionThreshold="2"
+        android:dropDownSelector="@drawable/abc_list_selector_background_transition_holo_light"
+        android:hint="Contact"
+        android:imeOptions="actionNext|flagNoEnterAction|flagNoExtractUi"
+        android:inputType="textEmailSubject|textMultiLine"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:cet_spanFontFamily="asset:FreeSans.ttf"
+        app:et_inputId="@+id/textfield_et_contact_input"
+        app:et_labelTextColor="@android:color/black"
+        app:et_supportMode="none"
+        android:singleLine="true"
+        app:et_supportTextColor="@android:color/black"
+        app:v_styleId="@array/edittext_contact" />
+
+    <com.rey.material.widget.EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/account"
+        android:completionThreshold="2"
+        android:dropDownSelector="@drawable/abc_list_selector_background_transition_holo_light"
+        android:hint="Contact"
+        android:imeOptions="actionNext|flagNoEnterAction|flagNoExtractUi"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:inputType="textPassword"
+        android:paddingRight="10dp"
+        app:cet_spanFontFamily="asset:FreeSans.ttf"
+        app:et_inputId="@+id/textfield_et_contact_input"
+        app:et_labelTextColor="@android:color/black"
+        app:et_supportMode="none"
+        app:et_supportTextColor="@android:color/black"
+        app:v_styleId="@array/edittext_contact" />
+
+    <com.dd.processbutton.iml.ActionProcessButton
+        android:id="@+id/login"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_below="@id/password"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="15dip"
+        android:text="登陆"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium" />
+
+</RelativeLayout>

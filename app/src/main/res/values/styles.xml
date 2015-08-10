@@ -5,4 +5,75 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Material"></style>
+
+    <style name="Material.Widget"></style>
+
+    <style name="Material.Widget.EditText">
+        <item name="et_labelEnable">true</item>
+        <item name="et_labelPadding">0dp</item>
+        <item name="et_labelTextAppearance">@style/TextAppearance.AppCompat.Caption</item>
+        <item name="et_labelTextColor">@color/abc_secondary_text_material_dark</item>
+        <item name="et_labelEllipsize">end</item>
+        <item name="et_labelInAnim">@anim/abc_fade_in</item>
+        <item name="et_labelOutAnim">@anim/abc_fade_out</item>
+        <item name="et_dividerErrorColor">?attr/colorAccent</item>
+        <item name="et_dividerAnimDuration">@android:integer/config_shortAnimTime</item>
+        <item name="et_dividerHeight">2dp</item>
+        <item name="et_dividerPadding">0dp</item>
+        <item name="et_dividerCompoundPadding">true</item>
+        <item name="et_supportTextAppearance">@style/TextAppearance.AppCompat.Caption</item>
+        <item name="et_supportTextColor">@color/abc_secondary_text_material_dark</item>
+        <item name="et_supportTextErrorColor">?attr/colorAccent</item>
+        <item name="et_supportEllipsize">end</item>
+    </style>
+
+    <style name="Material.Widget.EditText.Light" parent="Material.Widget.EditText">
+        <item name="et_labelTextColor">@color/abc_secondary_text_material_light</item>
+        <item name="et_supportTextColor">@color/abc_secondary_text_material_light</item>
+    </style>
+
+    <style name="LightEditText" parent="Material.Widget.EditText.Light">
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Body1</item>
+        <item name="android:textColor">@color/abc_primary_text_material_light</item>
+        <item name="android:textColorHint">@color/abc_secondary_text_material_light</item>
+        <item name="et_dividerColor">@drawable/color_divider_light</item>
+        <item name="et_labelTextColor">@drawable/color_label_light</item>
+        <item name="et_supportTextErrorColor">#FFFF0000</item>
+        <item name="et_dividerErrorColor">#FFFF0000</item>
+    </style>
+    <style name="DarkEditText"  parent="Material.Widget.EditText">
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Body1</item>
+        <item name="android:textColor">@color/abc_primary_text_material_dark</item>
+        <item name="android:textColorHint">@color/abc_secondary_text_material_dark</item>
+        <item name="et_dividerColor">@drawable/color_divider_dark</item>
+        <item name="et_labelTextColor">@drawable/color_label_dark</item>
+        <item name="et_supportTextErrorColor">#FFFF0000</item>
+        <item name="et_dividerErrorColor">#FFFF0000</item>
+    </style>
+    <style name="LightContactEditText" parent="LightEditText">
+        <item name="et_dividerPadding">4dp</item>
+        <item name="et_autoCompleteMode">multi</item>
+        <item name="cet_spanHeight">32dp</item>
+        <item name="cet_spanMaxWidth">150dp</item>
+        <item name="cet_spanPaddingLeft">8dp</item>
+        <item name="cet_spanPaddingRight">12dp</item>
+        <item name="cet_spanTextSize">14sp</item>
+        <item name="cet_spanTextColor">@color/abc_primary_text_material_light</item>
+        <item name="cet_spanBackgroundColor">#FFE7E7E7</item>
+        <item name="cet_spanSpacing">4dp</item>
+    </style>
+
+    <style name="DarkContactEditText" parent="DarkEditText">
+        <item name="et_dividerPadding">4dp</item>
+        <item name="et_autoCompleteMode">multi</item>
+        <item name="cet_spanHeight">32dp</item>
+        <item name="cet_spanMaxWidth">150dp</item>
+        <item name="cet_spanPaddingLeft">8dp</item>
+        <item name="cet_spanPaddingRight">12dp</item>
+        <item name="cet_spanTextSize">14sp</item>
+        <item name="cet_spanTextColor">@color/abc_primary_text_material_dark</item>
+        <item name="cet_spanBackgroundColor">#ff424242</item>
+        <item name="cet_spanSpacing">4dp</item>
+    </style>
 </resources>

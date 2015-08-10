@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="edittext_contact">
+        <item>@style/LightContactEditText</item>
+        <item>@style/DarkContactEditText</item>
+    </array>
+
+</resources>

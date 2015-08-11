@@ -26,6 +26,7 @@ import de.greenrobot.event.EventBus;
  * Created by wangzhicheng on 15/8/10.
  */
 public class LoginActivity extends Activity {
+    public static final String EXTRA_NEED_WELCOME = "EXTRA_NEED_WELCOME";
 
     private EditText mAccount;
     private EditText mPassword;
@@ -37,8 +38,10 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Intent intent = new Intent(this, WelcomeActivity.class);
-        startActivity(intent);
+        if (getIntent().getBooleanExtra(EXTRA_NEED_WELCOME, true)) {
+            Intent intent = new Intent(this, WelcomeActivity.class);
+            startActivity(intent);
+        }
 
         initUI();
         if (SPUtils.getAutoLogin(this)) {

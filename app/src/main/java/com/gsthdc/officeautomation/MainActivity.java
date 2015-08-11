@@ -71,6 +71,14 @@ public class MainActivity extends AppCompatActivity
             case 3:
                 mTitle = getString(R.string.title_section3);
                 break;
+            case 4:
+                Intent intent = new Intent(this, LoginActivity.class);
+                intent.putExtra(LoginActivity.EXTRA_NEED_WELCOME, false);
+                startActivity(intent);
+                SPUtils.setAccount(MainActivity.this, "");
+                SPUtils.setPassword(MainActivity.this, "");
+                SPUtils.setAutoLogin(MainActivity.this, false);
+                break;
         }
     }
 

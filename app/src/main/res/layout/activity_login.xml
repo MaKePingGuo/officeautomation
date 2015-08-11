@@ -5,6 +5,7 @@
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -15,45 +16,33 @@
         android:scaleType="fitStart"
         android:src="@drawable/login_banner" />
 
+
     <com.rey.material.widget.EditText
         android:id="@+id/account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/top_view"
-        android:completionThreshold="2"
-        android:dropDownSelector="@drawable/abc_list_selector_background_transition_holo_light"
-        android:hint="Contact"
-        android:imeOptions="actionNext|flagNoEnterAction|flagNoExtractUi"
-        android:inputType="textEmailSubject|textMultiLine"
+        android:hint="请输入用户名"
+        android:inputType="text"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:singleLine="true"
-        app:cet_spanFontFamily="asset:FreeSans.ttf"
-        app:et_inputId="@+id/textfield_et_contact_input"
-        app:et_labelTextColor="@android:color/black"
+        app:et_inputId="@+id/textfield_et_label_input"
         app:et_supportMode="none"
-        app:et_supportTextColor="@android:color/black"
-        app:v_styleId="@array/edittext_contact" />
+        app:v_styleId="@array/edittext" />
 
     <com.rey.material.widget.EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/account"
-        android:completionThreshold="2"
-        android:dropDownSelector="@drawable/abc_list_selector_background_transition_holo_light"
-        android:hint="Contact"
-        android:imeOptions="actionNext|flagNoEnterAction|flagNoExtractUi"
-        android:inputType="textPassword"
+        android:layout_marginTop="10dp"
+        android:hint="请输入密码"
+        android:inputType="text"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:singleLine="true"
-        app:cet_spanFontFamily="asset:FreeSans.ttf"
-        app:et_inputId="@+id/textfield_et_contact_input"
-        app:et_labelTextColor="@android:color/black"
+        app:et_inputId="@+id/textfield_et_label_input"
         app:et_supportMode="none"
-        app:et_supportTextColor="@android:color/black"
-        app:v_styleId="@array/edittext_contact" />
+        app:v_styleId="@array/edittext" />
 
     <com.rey.material.widget.CheckBox
         android:id="@+id/auto_login"
@@ -67,7 +56,9 @@
         android:layout_marginTop="10dp"
         android:checked="true"
         android:gravity="center_vertical"
-        app:v_styleId="@array/checkbox"></com.rey.material.widget.CheckBox>
+        android:theme="@style/AppBar"
+        android:text="下次自动登陆"
+        app:v_styleId="@array/checkbox" />
 
     <TextView
         android:id="@+id/auto_login_text"
@@ -77,8 +68,7 @@
         android:layout_alignTop="@id/auto_login"
         android:layout_toRightOf="@id/auto_login"
         android:gravity="center_vertical|left"
-        android:text="下次自动登陆"
-        android:textColor="@android:color/white" />
+        android:textColor="@color/blue_light_text" />
 
     <com.dd.processbutton.iml.ActionProcessButton
         android:id="@+id/login"

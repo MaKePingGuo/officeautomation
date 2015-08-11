@@ -5,9 +5,18 @@
         <item>@style/LightContactEditText</item>
         <item>@style/DarkContactEditText</item>
     </array>
+    <!--<array name="checkbox">-->
+        <!--<item>@style/LightCheckBoxDrawable</item>-->
+        <!--<item>@style/DarkCheckBoxDrawable</item>-->
+    <!--</array>-->
     <array name="checkbox">
-        <item>@style/LightCheckBoxDrawable</item>
         <item>@style/DarkCheckBoxDrawable</item>
+        <item>@style/DarkCheckBoxDrawable</item>
+    </array>
+
+    <array name="edittext">
+        <item>@style/LightEditText</item>
+        <item>@style/DarkEditText</item>
     </array>
 
 </resources>
